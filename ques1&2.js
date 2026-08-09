@@ -10,3 +10,37 @@ c = 50; // Error
 
 // Q2. Explain the concept of hoisting in JavaScript.
 "Hoisting is JavaScript's behavior of moving declarations to the top of their scope during the compile phase, before the code actually runs. var gets hoisted and initialized as undefined. let and const are hoisted too, but they stay in a 'temporal dead zone' until their line runs, so accessing them early throws an error instead of silently giving undefined. Function declarations are hoisted completely, body included, which is why you can call a function before its definition in the file."
+
+"
+b = 40; // Works
+c = 50; // Error
+
+Interview Tip:
+
+In modern JavaScript, use const by default, let when reassignment is needed, and avoid var.
+
+Q2. Explain the concept of hoisting.
+
+Answer:
+
+Hoisting is JavaScript's behavior of moving declarations to the top of their scope before execution.
+
+Example:
+
+console.log(a);
+var a = 10;
+
+JavaScript interprets it as:
+
+var a;
+console.log(a); // undefined
+a = 10;
+
+For let and const, variables are hoisted but remain in the Temporal Dead Zone (TDZ) until initialized.
+
+console.log(x);
+let x = 5;
+
+Output:
+
+ReferenceError"
